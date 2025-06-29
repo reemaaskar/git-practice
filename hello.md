@@ -1,1 +1,1 @@
-# I am learning to use git!
+# I am learning to use git and GitHub for KWK X BWDC!
