@@ -101,7 +101,25 @@ body{
     font-size: 60px;
     text-shadow: 0 15px 30px rgba(185, 185, 185, 0.386);
     margin-bottom: 5px;
-    margin-top: 0;     
+    margin-top: 0;  
+    overflow: hidden; 
+    border-right: .10em solid rgb(252, 170, 18); 
+    white-space: nowrap; 
+    letter-spacing: .15em;
+    margin: 0 auto; 
+    animation: 
+      typing 3.5s steps(40, end),
+      blink-caret .75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: rgb(252, 170, 18); }
 }
 
 #details h2 { 
@@ -138,24 +156,25 @@ body{
 
 .footer{
     display: flex; 
-    align-items: center;
     justify-content: center;
-    gap: 10px;
+    align-content: center ;
+    gap: 15px;
     font-family: "Karla", sans-serif;
     font-optical-sizing: auto;
     font-weight: 400;
     font-style: normal;
-    margin-top:-10px;
+    font-size: 15px;
     color: rgb(252, 170, 18);
 }
 
-.footer{
-    font-size: 15px;
+.footer p{
+    margin-top:-3px;
 }
 .fa {
     color: rgb(252, 170, 18);
     text-decoration: none;
     font-size: 25px;
+    
 }
 .fa:hover{
     color: white;
@@ -163,10 +182,30 @@ body{
 }
 
 #kwkme{
-    background-image: url('orange gradient.jpg');
+    background-image: url('black gradient.png');
     background-size: cover;
+    overflow-x: hidden
     
 }
+
+#center_title{
+    color: rgb(252, 170, 18);
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 75px;
+    text-shadow: 2px 2px 0px rgba(250, 247, 247, 0.989), 5px 5px 2px black;
+    margin-bottom: 5px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+#center_title:hover{
+    transform: scale(1.2);
+    text-shadow: 2px 2px 0px rgba(250, 247, 247, 0.989), 10px 10px 5px black;
+}
+
 .timeline {
     position: relative;
     max-width: 1200px;
@@ -231,32 +270,68 @@ body{
     padding: 20px;
     background-color: rgba(255, 255, 255, 0.715);
     position: relative;
-    border-radius: 6px;
+    border-radius: 10px;
     font-size: 16px;
     color: black;
+    display:flex;
+    align-items: center;
+    flex-direction:column;
 }
 
 .textbox h2 {
-    color: #333;
-    margin-top: 0;
+   font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    color: rgb(0, 0, 0);
+    font-size: 30px;
+    text-shadow: 0 15px 30px rgba(185, 185, 185, 0.386);
     margin-bottom: 5px;
+    margin-top: 3px;
+    text-align: center;
 }
 
 .textbox small {
-    color: #666;
-    display: block;
-    margin-bottom: 10px;
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+    color: rgb(110, 110, 110);
+    font-size: 15px;
+    text-shadow: 0 15px 30px rgba(185, 185, 185, 0.386);
+    margin-bottom: 10px;    
 }
 
 .textbox p {
     color: #444;
-    line-height: 1.6;
-    margin-bottom: 0;
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-size: 17px;
+    text-align: justify;
 }
 
-.textbox:hover {
-    box-shadow: 0 0 25px rgb(252, 170, 18);
+.textbox button {
+    background-color: rgb(252, 170, 18);
+    color: white;
+    border: 3px solid rgba(173, 117, 14, 0.89);
+    padding: 10px;
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 15px;
+    border-radius: 25px;
+    text-align:center;
+    transition: tansform ease 03s;
 }
+
+.textbox button:hover{
+    transform: scale(1.05);
+    box-shadow: 10px 10px 25px rgb(77, 63, 41);
+}
+
+
 
 .left-container {
     align-self: flex-start;
@@ -279,24 +354,54 @@ body{
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    background: rgba(255, 255, 255, 0.715);
+    background: rgba(252, 170, 18, 0.865);
     border: 3px solid rgba(255, 255, 255, 0.868);
     top: 20px;
     z-index: 1;
+    content: '';
+    right: -17px;
 }
 
-.left-container::after {
-    right: -45px; 
+
+.left-container::after { 
     left: auto; 
     transform: translateX(50%); 
-    right: -25px; 
+    right: -60px; 
      
 }
 
+.left-container::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right:0px;
+  border: medium solid rgba(255, 255, 255, 0.715);
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent rgba(255, 255, 255, 0.715);
+}
+
+
 .right-container::after {
-    left: -33px; 
+    left: -73px; 
     right: auto; 
 }
+
+.right-container::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left:0px;
+  border: medium solid rgba(255, 255, 255, 0.715);
+  border-width: 10px 10px 10px 0;
+  border-color: transparent rgba(255, 255, 255, 0.715) transparent transparent;
+}
+
 
 @media screen and (max-width: 800px) {
     .timeline {
@@ -335,4 +440,11 @@ body{
         right: auto;
         transform: translateX(0); 
     }
+
+    .container::before {
+    left: 60px;
+    border: medium solid rgba(255, 255, 255, 0.715);
+    border-width: 10px 10px 10px 0;
+    border-color: transparent rgba(255, 255, 255, 0.715) transparent transparent;
+  }
 }
